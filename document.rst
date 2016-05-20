@@ -73,8 +73,9 @@ License
 
 |CC BY-SA 4.0 image|_
 
-*TODO* de `Jérémie Decock`_ est mis à
-disposition selon les termes de la licence |CC BY-SA 4.0|_. 
+*TODO*
+de `Jérémie Decock`_
+est mis à disposition selon les termes de la licence |CC BY-SA 4.0|_. 
 
 .. ............................................................................
 
