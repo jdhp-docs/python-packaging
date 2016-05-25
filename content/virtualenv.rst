@@ -75,6 +75,21 @@ Installation sur Debian/Ubuntu/...::
 * Documentation officielle: https://docs.python.org/3/library/venv.html
 * http://askubuntu.com/questions/279959/how-to-create-a-virtualenv-with-python3-3-in-ubuntu (cf. la 2e réponse)
 
+Sur Debian/Ubuntu, il y a un "bug" (en réalité c'est un choix des dev Debian
+TODO...): par défaut, les sitepackages ne sont pas accessibles depuis
+l'environnement virtuel Python (par exemple ``import numpy`` échoue même si
+numpy est installé sur le système...).
+Pour résoudre ce problème, il suffit de déclarer la variable d'environnement
+``PYTHONPATH`` comme suit à la fin du fichier ``~/.bashrc``::
+
+ export PYTHONPATH=${PYTHONPATH}:/usr/lib/python3/dist-packages
+
+et de recharger le .bashrc en rouvrant le terminal ou en tapant::
+
+ source ~/.bashrc
+
+Pour plus de détails, cf. http://stackoverflow.com/questions/19210964/how-to-get-virtualenv-to-use-dist-packages-on-ubuntu.
+
 Créer un environnement virtuel::
 
     pyvenv <PATH>
