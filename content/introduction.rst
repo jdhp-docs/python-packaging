@@ -2,8 +2,11 @@ Introduction
 ============
 
 Documentation "officielle":
+
 - PyPA: https://www.pypa.io/
 - PyPUG: https://python-packaging-user-guide.readthedocs.org/
+
+Documentation intéressante:
 
 - https://python-packaging-user-guide.readthedocs.org/
 - http://sametmax.com/creer-un-setup-py-et-mettre-sa-bibliotheque-python-en-ligne-sur-pypi/ (nov 2012)
@@ -26,6 +29,7 @@ Installer un paquet en local
 ----------------------------
 
 Petit tour d'horizon des principaux outils disponibles:
+
 - distutils: basique mais intégré à la lib standard
 - setuptools: standard de fait, plus riche mais pas dans la bibliothèque standard
 
@@ -43,6 +47,7 @@ Installer un paquet depuis internet
 PyPI (http://pypi.python.org) : le site web où sont entreposés les paquets.
 
 Petit tour d'horizon des principaux outils disponibles:
+
 - easy_install
 - pip
 

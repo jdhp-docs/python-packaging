@@ -15,6 +15,7 @@ Virtualenv
 ----------
 
 Tout est très bien expliqué dans le tutoriel suivant:
+
 - http://sametmax.com/les-environnement-virtuels-python-virtualenv-et-virtualenvwrapper/ (oct 2012)
 
 Pour résumer, principales commandes:
@@ -58,6 +59,7 @@ Virtualenvwrapper
 Pour passer facilement d'un environnement virtuel à l'autre.
 
 Cf:
+
 - http://sametmax.com/les-environnement-virtuels-python-virtualenv-et-virtualenvwrapper/ (oct 2012)
 
 pyenv
@@ -97,5 +99,6 @@ Venv
 ----
 
 Référence:
+
 - https://docs.python.org/3/library/venv.html
 

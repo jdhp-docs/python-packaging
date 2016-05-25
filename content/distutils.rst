@@ -6,6 +6,7 @@ Distutils
 - https://wiki.python.org/moin/Distutils/
 
 Fichiers à la racine du projet:
+
 - MANIFEST.in
 - setup.py
 
