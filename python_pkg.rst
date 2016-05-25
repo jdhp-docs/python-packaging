@@ -20,19 +20,19 @@ Présentation des outils les plus utilisées
 .. Include options:
 .. http://docutils.sourceforge.net/docs/ref/rst/directives.html#include
 
-.. include:: introduction.rst
+.. include:: content/introduction.rst
 
-.. include:: distutils.rst
+.. include:: content/distutils.rst
 
-.. include:: setuptools.rst
+.. include:: content/setuptools.rst
 
-.. include:: pypi.rst
+.. include:: content/pypi.rst
 
-.. include:: easyinstall.rst
+.. include:: content/easyinstall.rst
 
-.. include:: pip.rst
+.. include:: content/pip.rst
 
-.. include:: virtualenv.rst
+.. include:: content/virtualenv.rst
 
-.. include:: refs.rst
+.. include:: content/refs.rst
 
