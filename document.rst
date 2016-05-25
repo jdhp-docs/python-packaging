@@ -1,13 +1,17 @@
 .. -*- coding: utf-8 -*-
 
-====
-TODO
-====
+===========================
+Distribuer un projet Python
+===========================
+
+------------------------------------------
+Présentation des outils les plus utilisées
+------------------------------------------
 
 :Author: Jérémie Decock
 :Contact: jd.jdhp@gmail.com
 :Revision: 1
-:Date: TODO/TODO/2016
+:Date: 01/05/2016
 :Licence: |CC BY-SA 4.0|_
 
 .. ............................................................................
@@ -16,8 +20,8 @@ TODO
 
 .. meta::
     :author: Jérémie DECOCK
-    :description: TODO
-    :keywords: TODO, TODO, TODO
+    :description: Présentation des outils les plus utilisées
+    :keywords: python, packaging, pypa, virtualenv, distutils, setuptools, easyinstall, pip, pypi
     :copyright: Copyright (c) 2016 Jérémie DECOCK
 
 .. ............................................................................
@@ -38,6 +42,15 @@ TODO
 
 .. contents:: Sommaire
 
+.. Liste des sujets à aborder:
+.. - PyPa
+.. - virtualenv
+.. - distutils
+.. - setuptools
+.. - easyinstall
+.. - pip
+.. - PyPi
+
 .. ............................................................................
 
 .. Break the page for rst2pdf
@@ -46,13 +59,24 @@ TODO
 
     PageBreak
 
-TITLE 1
-=======
+.. Include options:
+.. http://docutils.sourceforge.net/docs/ref/rst/directives.html#include
 
-TITLE 2
--------
+.. include:: content/introduction.rst
 
-TODO
+.. include:: content/distutils.rst
+
+.. include:: content/setuptools.rst
+
+.. include:: content/pypi.rst
+
+.. include:: content/easyinstall.rst
+
+.. include:: content/pip.rst
+
+.. include:: content/virtualenv.rst
+
+.. include:: content/refs.rst
 
 .. ............................................................................
 
@@ -73,13 +97,13 @@ License
 
 |CC BY-SA 4.0 image|_
 
-*TODO*
+*Distribuer un projet Python*
 de `Jérémie Decock`_
 est mis à disposition selon les termes de la licence |CC BY-SA 4.0|_. 
 
 .. ............................................................................
 
-.. _TODO: http://www.jdhp.org/tutorials_TODO.html#TODO
+.. _Distribuer un projet Python: http://www.jdhp.org/tutorials_fr.html#python-packaging
 .. _Jérémie Decock: http://www.jdhp.org/
 
 .. |CC BY-SA 4.0| replace:: Creative Commons 4.0 (CC BY-SA 4.0)
