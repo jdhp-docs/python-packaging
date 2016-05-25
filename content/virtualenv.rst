@@ -62,6 +62,34 @@ Cf:
 
 - http://sametmax.com/les-environnement-virtuels-python-virtualenv-et-virtualenvwrapper/ (oct 2012)
 
+
+venv
+____
+
+Intégré à Python v3.3 et plus.
+
+Installation sur Debian/Ubuntu/...::
+
+ # aptitude install python3-venv
+
+* Documentation officielle: https://docs.python.org/3/library/venv.html#module-venv
+* http://askubuntu.com/questions/279959/how-to-create-a-virtualenv-with-python3-3-in-ubuntu (cf. la 2e réponse)
+
+Créer un environnement virtuel::
+
+    pyvenv <PATH>
+
+où ``<PATH>`` est le chemin du répertoire où créer l'environnement virtuel.
+
+Entrer dans l'environnement virtuel (Unix)::
+
+    source <PATH>/bin/activate
+
+Sortir de l'environnement virtuel::
+
+    deactivate
+
+
 pyenv
 -----
 
