@@ -64,7 +64,7 @@ Cf:
 
 
 venv
-____
+----
 
 Intégré à Python v3.3 et plus.
 
@@ -72,7 +72,7 @@ Installation sur Debian/Ubuntu/...::
 
  # aptitude install python3-venv
 
-* Documentation officielle: https://docs.python.org/3/library/venv.html#module-venv
+* Documentation officielle: https://docs.python.org/3/library/venv.html
 * http://askubuntu.com/questions/279959/how-to-create-a-virtualenv-with-python3-3-in-ubuntu (cf. la 2e réponse)
 
 Créer un environnement virtuel::
@@ -122,11 +122,4 @@ WTF?!
 
 
 Qui dit vrais ?
-
-Venv
-----
-
-Référence:
-
-- https://docs.python.org/3/library/venv.html
 
