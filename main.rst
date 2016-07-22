@@ -1,5 +1,10 @@
 .. -*- coding: utf-8 -*-
 
+.. Include options:
+.. http://docutils.sourceforge.net/docs/ref/rst/directives.html#include
+
+.. include:: meta.rst
+
 ===========================
 Distribuer un projet Python
 ===========================
@@ -8,21 +13,11 @@ Distribuer un projet Python
 Présentation des outils les plus utilisées
 ------------------------------------------
 
-:Author: Jérémie Decock
-:Contact: jd.jdhp@gmail.com
-:Revision: 1
-:Date: 01/05/2016
+:Author: |AUTHORS|
+:Contact: |CONTACT|
+:Revision: |REVISION|
+:Date: |DATE|
 :Licence: |CC BY-SA 4.0|_
-
-.. ............................................................................
-
-.. http://docutils.sourceforge.net/docs/ref/rst/directives.html#meta
-
-.. meta::
-    :author: Jérémie DECOCK
-    :description: Présentation des outils les plus utilisées
-    :keywords: python, packaging, pypa, virtualenv, distutils, setuptools, easyinstall, pip, pypi
-    :copyright: Copyright (c) 2016 Jérémie DECOCK
 
 .. ............................................................................
 
@@ -42,15 +37,6 @@ Présentation des outils les plus utilisées
 
 .. contents:: Sommaire
 
-.. Liste des sujets à aborder:
-.. - PyPa
-.. - virtualenv
-.. - distutils
-.. - setuptools
-.. - easyinstall
-.. - pip
-.. - PyPi
-
 .. ............................................................................
 
 .. Break the page for rst2pdf
@@ -62,21 +48,7 @@ Présentation des outils les plus utilisées
 .. Include options:
 .. http://docutils.sourceforge.net/docs/ref/rst/directives.html#include
 
-.. include:: content/introduction.rst
-
-.. include:: content/distutils.rst
-
-.. include:: content/setuptools.rst
-
-.. include:: content/pypi.rst
-
-.. include:: content/easyinstall.rst
-
-.. include:: content/pip.rst
-
-.. include:: content/virtualenv.rst
-
-.. include:: content/refs.rst
+.. include:: content/main.rst
 
 .. ............................................................................
 
@@ -97,13 +69,11 @@ License
 
 |CC BY-SA 4.0 image|_
 
-*Distribuer un projet Python*
-de `Jérémie Decock`_
-est mis à disposition selon les termes de la licence |CC BY-SA 4.0|_. 
+Ce document écrit par `Jérémie Decock`_ est mis à
+disposition selon les termes de la licence |CC BY-SA 4.0|_. 
 
 .. ............................................................................
 
-.. _Distribuer un projet Python: http://www.jdhp.org/tutorials_fr.html#python-packaging
 .. _Jérémie Decock: http://www.jdhp.org/
 
 .. |CC BY-SA 4.0| replace:: Creative Commons 4.0 (CC BY-SA 4.0)
