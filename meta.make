@@ -1,4 +1,4 @@
-NAME=python-packaging-fr
+FILE_BASE_NAME=python_packaging_fr
 
 # rst2html options ############################################################
 
