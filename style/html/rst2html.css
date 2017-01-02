@@ -21,6 +21,10 @@ body {
     text-align: justify;
 }
 
+strong {
+    font-weight: bold;
+}
+
 /* Main title */
 
 h1.title {
