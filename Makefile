@@ -58,7 +58,7 @@ ifneq (,$(findstring MSYS,$(UNAME_S)))
 endif
 
 
-## MAKE ARTICLE ###############################################################
+## MAKE DOCUMENT ##############################################################
 
 # HTML ############
 
@@ -93,8 +93,7 @@ $(FILE_BASE_NAME).latex.pdf: $(SRCFILES) $(SUBDIRS)
 	#pandoc --toc -N  -V papersize:"a4paper" -V geometry:"top=2cm, bottom=3cm, left=2cm, right=2cm" -V "fontsize:12pt" -o $@ main.rst
 	pandoc --toc -N  -V papersize:"a4paper" -V "fontsize:12pt" -o $@ main.rst
 
-
-## MAKE SLIDES ################################################################
+# SLIDES ##########
 
 slides: $(FILE_BASE_NAME)_slides.html
 
