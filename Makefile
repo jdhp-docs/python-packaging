@@ -12,10 +12,12 @@ SRCFILES = Makefile \
 
 all: $(FILE_BASE_NAME).html $(FILE_BASE_NAME).pdf
 
+
 # SUBDIRS #####################################################################
 
 $(SUBDIRS):
 	$(MAKE) --directory=$@
+
 
 # OPEN IN WEB BROWSER #########################################################
 
@@ -28,72 +30,41 @@ $(SUBDIRS):
 # If uname not available then UNAME_S is set to 'unknown' 
 UNAME_S := $(shell sh -c 'uname -s 2>/dev/null || echo unknown')
 
-open: $(SUBDIRS)
+open: html
 # Linux ###############################
 # See: http://askubuntu.com/questions/8252/
 ifeq ($(UNAME_S),Linux)
-	@xdg-open main.html
+	@xdg-open $(FILE_BASE_NAME).html
 endif
 
 # MacOSX ##############################
 ifeq ($(UNAME_S),Darwin)
-	@open -a firefox main.html
-	#open -a Google\ Chrome main.html
+	@open -a firefox $(FILE_BASE_NAME).html
+	#open -a Google\ Chrome $(FILE_BASE_NAME).html
 endif
 
 # Windows #############################
 ifneq (,$(findstring CYGWIN,$(UNAME_S)))
-	@#start chrome  main.html
-	@start firefox  main.html
+	@#start chrome  $(FILE_BASE_NAME).html
+	@start firefox  $(FILE_BASE_NAME).html
 endif
 ifneq (,$(findstring MINGW32,$(UNAME_S)))
-	@#start chrome  main.html
-	@start firefox  main.html
+	@#start chrome  $(FILE_BASE_NAME).html
+	@start firefox  $(FILE_BASE_NAME).html
 endif
 ifneq (,$(findstring MSYS,$(UNAME_S)))
-	@#start chrome  main.html
-	@start firefox  main.html
-endif
-
-# MAKE PDF ####################################################################
-
-pdf: $(FILE_BASE_NAME).pdf $(SUBDIRS)
-
-# TODO: follow the full setup procedure (with NodeJS) described there
-#       https://github.com/hakimel/reveal.js/#full-setup
-
-$(FILE_BASE_NAME).pdf: $(SRCFILES)
-	@echo "Not fully available yet"           # TODO
-# Linux ###############################
-# See: http://askubuntu.com/questions/8252/
-ifeq ($(UNAME_S),Linux)
-	@xdg-open main.html?print-pdf
-endif
-
-# MacOSX ##############################
-ifeq ($(UNAME_S),Darwin)
-	@open -a Google\ Chrome main.html?print-pdf
-endif
-
-# Windows #############################
-ifneq (,$(findstring CYGWIN,$(UNAME_S)))
-	@start chrome  main.html?print-pdf
-endif
-ifneq (,$(findstring MINGW32,$(UNAME_S)))
-	@start chrome  main.html?print-pdf
-endif
-ifneq (,$(findstring MSYS,$(UNAME_S)))
-	@start chrome  main.html?print-pdf
+	@#start chrome  $(FILE_BASE_NAME).html
+	@start firefox  $(FILE_BASE_NAME).html
 endif
 
 
-## ARTICLE ####################################################################
+## MAKE ARTICLE ###############################################################
 
 # HTML ############
 
 html: $(FILE_BASE_NAME).html
 
-$(FILE_BASE_NAME).html: $(SRCFILES)
+$(FILE_BASE_NAME).html: $(SRCFILES) $(SUBDIRS)
 	rst2html --title="$(TITLE)" --date --time --generator \
 		--language=$(LANGUAGE) --tab-width=4 --math-output=$(MATH_OUTPUT) \
 		--source-url="$(SOURCE_URL)" --stylesheet=$(HTML_STYLESHEET) \
@@ -104,29 +75,30 @@ $(FILE_BASE_NAME).html: $(SRCFILES)
 
 pdf: $(FILE_BASE_NAME).pdf
 
-$(FILE_BASE_NAME).pdf: $(SRCFILES)
+$(FILE_BASE_NAME).pdf: $(SRCFILES) $(SUBDIRS)
 	rst2pdf --language=$(LANGUAGE) --repeat-table-rows -o $@ main.rst
 
 # ODT #############
 
 odt: $(FILE_BASE_NAME).odt
 
-$(FILE_BASE_NAME).odt: $(SRCFILES)
+$(FILE_BASE_NAME).odt: $(SRCFILES) $(SUBDIRS)
 	rst2odt main.rst $@
 
 # PDF Latex #######
 
 pdf-latex: $(FILE_BASE_NAME).latex.pdf
 
-$(FILE_BASE_NAME).latex.pdf: $(SRCFILES)
+$(FILE_BASE_NAME).latex.pdf: $(SRCFILES) $(SUBDIRS)
 	#pandoc --toc -N  -V papersize:"a4paper" -V geometry:"top=2cm, bottom=3cm, left=2cm, right=2cm" -V "fontsize:12pt" -o $@ main.rst
 	pandoc --toc -N  -V papersize:"a4paper" -V "fontsize:12pt" -o $@ main.rst
 
-## SLIDES #####################################################################
+
+## MAKE SLIDES ################################################################
 
 slides: $(FILE_BASE_NAME)_slides.html
 
-$(FILE_BASE_NAME)_slides.html: $(SRCFILES)
+$(FILE_BASE_NAME)_slides.html: $(SRCFILES) $(SUBDIRS)
 	rst2s5 --title=$(TITLE) --date --time --generator \
 		--language=$(LANGUAGE) --tab-width=4 --math-output=$(MATH_OUTPUT) \
 		--source-url=$(SOURCE_URL) \
@@ -137,7 +109,7 @@ $(FILE_BASE_NAME)_slides.html: $(SRCFILES)
 
 publish: jdhp
 
-jdhp: $(FILE_BASE_NAME).html $(FILE_BASE_NAME).pdf $(SUBDIRS)
+jdhp: $(FILE_BASE_NAME).html $(FILE_BASE_NAME).pdf
 	
 	########
 	# HTML #
@@ -167,6 +139,7 @@ jdhp: $(FILE_BASE_NAME).html $(FILE_BASE_NAME).pdf $(SUBDIRS)
 	
 	# Upload the PDF file
 	rsync -v -e ssh $(FILE_BASE_NAME).pdf ${JDHP_DL_URI}/pdf/
+
 
 ## CLEAN ######################################################################
 
