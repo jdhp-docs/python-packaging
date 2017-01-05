@@ -221,6 +221,38 @@ TODO...
 
 See: http://conda.pydata.org/docs/using/envs.html
 
+Pour créer un environment virtuel `sandbox`:
+
+.. code-block:: bash
+
+    conda create -n sandbox
+
+To activate this environment, use:
+
+.. code-block:: bash
+
+    source activate sandbox
+
+To deactivate this environment, use:
+
+.. code-block:: bash
+
+    source deactivate sandbox
+
+Pour lister les environments virtuels présents sur le système:
+
+.. code-block:: bash
+
+    conda info --envs
+
+Supprimer un environment::
+
+    conda remove --name flowers --all
+
+
+
+Misc:
+
 .. code-block:: bash
 
     conda create -n cta python=3.5 astropy matplotlib scipy scikit-learn numba cython
