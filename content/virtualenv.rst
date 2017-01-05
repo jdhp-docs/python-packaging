@@ -219,6 +219,8 @@ Virtual environments with Conda
 
 TODO...
 
+See: http://conda.pydata.org/docs/using/envs.html
+
 .. code-block:: bash
 
     conda create -n cta python=3.5 astropy matplotlib scipy scikit-learn numba cython
