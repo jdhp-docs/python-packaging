@@ -2,6 +2,7 @@ Environnements virtuels Python
 ==============================
 
 UPDATE: à lire:
+
 - http://masnun.com/2016/04/10/python-pyenv-pyvenv-virtualenv-whats-the-difference.html
 - https://realpython.com/blog/python/python-virtual-environments-a-primer/
 - http://pewetheb.blogspot.fr/2015/11/virtual-environment-in-python.html    (ok)
@@ -15,21 +16,23 @@ UPDATE: à lire:
     "la notion simple d’avoir des installations de Python isolées de l’OS, et
     séparées les unes des autres pour chaque projet" (sametmax.com)
 
-Pour résumer:
+Pour résumer, ancien outil tiers (toujours très utilisé ?) pour virtualliser les paquets python:
 
-Ancien outil tiers (toujours très utilisé ?) pour virtualliser les paquets python:
 - virtualenv_ : outil externe populaire qui était là bien avant venv. à l'avantage de fonctionner avec de vielles versions de Python (<3.3)
 - virtualenvwrapper: basically, this is a script to wrap virtualenv so that it is easier for us to work on multiple virtual environments.
 
 La nouvelle alternative officielle à virtualenv pour virtualliser les paquets python:
+
 - venv_ : une librairie intégrée à Python depuis Python 3.3 pour faire la même chose que virtualenv mais intégré de base dans python (c'est le seul outil "officiel" de la liste). It looks pretty much similar to virtualenv but "venv has less features compared to virtualenv".
 - pyvenv_ (à ne pas confondre avec pyenv): un script de venv_ (déprécié depuis Python 3.6 au profit de `python3 -m venv`)
 
 Outil tiers (scripts shell) pour installer plusieurs interprètes Python:
+
 - pyenv (à ne pas confondre avec pyvenv) : outil tiers (scripts shell) pour installer plusieurs *interprètes* Python sur un même système (par ex. CPython 2.6, CPython 3.4, Pypy, IronPyhon, ...). Rien à voir avec les outils précédents mais son nom entretient une certaine confusion avec venv et pyvenv
 - Pythonbrew: ancien nom de pyenv (?)
 
 Misc:
+
 - buildout_ : puissant mais compliqué
 
 
@@ -136,9 +139,13 @@ et de recharger le .bashrc en rouvrant le terminal ou en tapant::
 
 Pour plus de détails, cf. http://stackoverflow.com/questions/19210964/how-to-get-virtualenv-to-use-dist-packages-on-ubuntu.
 
-Créer un environnement virtuel::
+Créer un environnement virtuel avec Python 3.3 à 3.5::
 
     pyvenv <PATH>
+
+Créer un environnement virtuel avec Python 3.6 et +::
+
+    python3 -m venv <PATH>
 
 où ``<PATH>`` est le chemin du répertoire où créer l'environnement virtuel.
 
@@ -206,4 +213,19 @@ In contrast with pythonbrew and pythonz, pyenv does not...
 
 
 Un tutoriel pour pyenv: https://amaral.northwestern.edu/resources/guides/pyenv-tutorial
+
+Virtual environments with Conda
+-------------------------------
+
+TODO...
+
+.. code-block:: bash
+
+    conda create -n cta python=3.5 astropy matplotlib scipy scikit-learn numba cython
+
+Next, switch to this new virtual environment and install some other useful tools for development:
+
+.. code-block:: bash
+
+     source activate cta
 
